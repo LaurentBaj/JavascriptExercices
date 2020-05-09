@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+ 
+<body>
+ 
+    Hvor mange ganger skal løkken kjøre: <input id="input" type="text">
+    <input id="btn" type="button" value="Kjør">
+ 
+    <p id="output"></p>
+ 
+    <script>
+ 
+        var input = document.getElementById('input')
+ 
+        var btn = document.getElementById('btn')
+ 
+        var output = document.getElementById('output')
+ 
+        btn.addEventListener('click', function () {
+            var input1 = parseInt(input.value)
+ 
+            for (var i = 0; i < input1; i++) {
+                output.innerHTML = i 
+            }
+        })
+ 
+ 
+    </script>
+ 
+</body>
+ 
+</html>
