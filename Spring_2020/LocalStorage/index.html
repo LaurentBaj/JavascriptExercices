@@ -12,8 +12,8 @@
 
 
 <body>
+    <!--DOM-Elements which will be aquired in script-->
     <h1>Local Storage</h1>
-
     <div class="container">
         <ul class="myTasks"></ul>
         <form class="taskAdder">
@@ -22,11 +22,13 @@
         </form>
     </div>
     <script>
+        // Aquiring DOMs + array for values
         const taskAdder = document.querySelector('.taskAdder'); 
         const myTasks = document.querySelector('.myTasks'); 
         const tasks = []; 
-        console.dir(document); 
+        console.dir(document);
 
+        // Gave DOMs events and functionality
         taskAdder.addEventListener('submit',addTask);
         myTasks.addEventListener('click',toggleDone); 
 
@@ -40,22 +42,18 @@
             outputTasks(); 
             this.reset(); 
         }
-
         function outputTasks(){
             let toSite = tasks.map(function(data,i){
-                return '<li><div data-index='+i+'>'+data.textTask+'</div></li>'
+                return '<li><div data-index='+i+'>'+data.textTask+'</div></li>';
             })
+            // Add spacing to make it easier to read
             toSite = toSite.join("")
-            console.log(toSite);
             myTasks.innerHTML = toSite; 
-            
+            console.log(toSite);
         }
-
-
-
         function toggleDone(e){
             e.preventDefault(); 
-            console.log("submitted");
+            console.log("done");
         }
     </script>
 </body>
