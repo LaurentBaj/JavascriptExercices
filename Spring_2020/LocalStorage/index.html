@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Local Storage Exercice</title>
 </head>
-<body>
+<style>
 
+
+</style>
+
+
+<body>
     <h1>Local Storage</h1>
+
+    <div class="container">
+        <ul class="myTasks">
+            <li>Task list items</li>
+        </ul>
+        <form class="taskAdder">
+            <input type="text" name="task" placeholder="New Task Item" required>
+            <input type="submit" value="+Add">
+        </form>
+    </div>
     
     <script>
+        const taskAdder = document.querySelector('.taskAdder'); 
+        const myTasks = document.querySelector('.myTasks'); 
+            
+        console.dir(document); 
 
-        console.log(localStorage); 
+        taskAdder.addEventListener('submit',addTask);
+        myTasks.addEventListener('click',toggleDone); 
 
-
+        function addTask(){
+            console.log('done');
+        }
+        function toggleDone(){
+            console.log("submitted");
+        }
     </script>
 </body>
 </html>
