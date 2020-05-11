@@ -15,28 +15,46 @@
     <h1>Local Storage</h1>
 
     <div class="container">
-        <ul class="myTasks">
-            <li>Task list items</li>
-        </ul>
+        <ul class="myTasks"></ul>
         <form class="taskAdder">
             <input type="text" name="task" placeholder="New Task Item" required>
             <input type="submit" value="+Add">
         </form>
     </div>
-    
     <script>
         const taskAdder = document.querySelector('.taskAdder'); 
         const myTasks = document.querySelector('.myTasks'); 
-            
+        const tasks = []; 
         console.dir(document); 
 
         taskAdder.addEventListener('submit',addTask);
         myTasks.addEventListener('click',toggleDone); 
 
-        function addTask(){
-            console.log('done');
+        function addTask(e){
+            e.preventDefault();  
+            const textTask = this.querySelector('[name=task]').value; 
+            const task = {
+                textTask, done:false
+            }
+            tasks.push(task); 
+            outputTasks(); 
+            this.reset(); 
         }
-        function toggleDone(){
+
+        function outputTasks(){
+            let toSite = tasks.map(function(data,i){
+                return '<li><div data-index='+i+'>'+data.textTask+'</div></li>'
+            })
+            toSite = toSite.join("")
+            console.log(toSite);
+            myTasks.innerHTML = toSite; 
+            
+        }
+
+
+
+        function toggleDone(e){
+            e.preventDefault(); 
             console.log("submitted");
         }
     </script>
