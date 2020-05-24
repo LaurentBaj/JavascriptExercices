@@ -6,6 +6,50 @@
     <title>Document</title>
 </head>
 <body>
+
+    <style>
+        #btn2 {
+            position: relative;
+            top: 10px;
+        }
+    </style>
+
+
+    <div id="tasks">
+    <input type="button" id="btn2" value="Lag ny oppgave">
+    
+
+
+    <script>
+        const tasks = document.getElementById("tasks"); 
+        const btn2 = document.getElementById("btn2"); 
+
+        btn2.onclick = function() {
+            let newDiv = document.createElement("div"); 
+            let newBtn = document.createElement("button");
+            let btnText = document.createTextNode("Fullfør");
+            newBtn.appendChild(btnText);   
+
+            newDiv.style.border = "3px solid black";
+            newDiv.style.height = "70px";   
+            newBtn.value = "Fullfør"
+            tasks.appendChild(newDiv); 
+            tasks.appendChild(newBtn); 
+
+            newBtn.onclick = function() {
+                newDiv.style.backgroundColor = "black"; 
+            }
+        }
+
+
+
+
+        
+        
+
+
+
+    </script>
     
 </body>
 </html>
