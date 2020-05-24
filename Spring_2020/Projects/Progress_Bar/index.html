@@ -11,14 +11,14 @@
         #btn2 {
             position: relative;
             top: 10px;
+            width: 130px;
+            height: 120px;
         }
     </style>
 
-
-    <div id="tasks">
     <input type="button" id="btn2" value="Lag ny oppgave">
+    <div id="tasks"></div>
     
-
 
     <script>
         const tasks = document.getElementById("tasks"); 
@@ -26,29 +26,22 @@
 
         btn2.onclick = function() {
             let newDiv = document.createElement("div"); 
+            // Lager ny knapp, lager ny tekst + limer teksten på knappen
             let newBtn = document.createElement("button");
             let btnText = document.createTextNode("Fullfør");
             newBtn.appendChild(btnText);   
 
             newDiv.style.border = "3px solid black";
             newDiv.style.height = "70px";   
-            newBtn.value = "Fullfør"
+            newDiv.style.backgroundColor = "red"; 
+
             tasks.appendChild(newDiv); 
             tasks.appendChild(newBtn); 
 
             newBtn.onclick = function() {
-                newDiv.style.backgroundColor = "black"; 
+                newDiv.style.backgroundColor = "green"; 
             }
         }
-
-
-
-
-        
-        
-
-
-
     </script>
     
 </body>
